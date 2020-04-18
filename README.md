@@ -18,10 +18,28 @@ This API takes in the url of a webpage and css selector id of the content to be 
 * In order to scrap the following table from [Football Reference's page](https://fbref.com/en/comps/22/Major-League-Soccer-Stats), first we get the css selector id for the table. 
 * You can refer to  [my previous article on web scraping](https://npranav10.github.io/blog/scraping_fbref_data.html) on using SelectorGadget to identify the css selector id for an html element.
 
-# <p align="center"><img src="https://raw.githubusercontent.com/npranav10/npranav10.github.io/master/blog/scraping-fbref-data/selectorgadget.png" width="700" /></p>
+# <p align="center"><img src="https://raw.githubusercontent.com/npranav10/npranav10.github.io/master/blog/scraping-fbref-data/selectorgadget.png" width="800" /></p>
 * From the above image we get to know that the css selector id for the "Squads Goalkeeping" table is #stats_keeper_squads.
 * In order to scrap the table, all we need to do is call the API as 
 `http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/22/Major-League-Soccer-Stats&content_selector_id=%23stats_keeper_squads`.
  Note that **#** is replaced with its ASCII value **%23** as URL's don't accept some symbols. Remember to swap # with %23 or refer to this [page](https://krypted.com/utilities/html-encoding-reference/) for more details for encoding other symbols.
 * The result is as follows: (we get the table in html format)
-# <p align="center"><img src="https://raw.githubusercontent.com/npranav10/acciotables/master/accio.png" width="600" /></p>
+# <p align="center"><img src="https://raw.githubusercontent.com/npranav10/acciotables/master/accio.png" width="800" /></p>
+
+## <ins> Calling the API in R:</ins>
+```r
+require(rvest)
+require(dplyr)
+page <- read_html("http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/22/Major-League-Soccer-Stats&content_selector_id=%23stats_keeper_squads")
+table <- page %>% html_table() %>% bind_rows()
+print(table)
+```
+
+## <ins> Using the API in Python:</ins>
+```python
+import pandas as pd
+url = "http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/22/Major-League-Soccer-Stats&content_selector_id=%23stats_keeper_squads"
+
+df = pd.read_html(url,header=0)
+print(df)
+```
