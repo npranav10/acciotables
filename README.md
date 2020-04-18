@@ -15,6 +15,8 @@ This API takes in the url of a webpage and css selector id of the content to be 
 
 ## <ins> Sample usage:</ins>
 
+`Note: Since the API is deployed on Heroku, it might take a while to wake the web process if the webapp had been idle for last few minutes and needs to be moved from idle to running. Once it's up and running it will take a maximum of 4 seconds to produce the result.`
+
 * In order to scrap the following table from [Football Reference's page](https://fbref.com/en/comps/22/Major-League-Soccer-Stats), first we get the css selector id for the table. 
 * You can refer to  [my previous article on web scraping](https://npranav10.github.io/blog/scraping_fbref_data.html) on using SelectorGadget to identify the css selector id for an html element.
 
