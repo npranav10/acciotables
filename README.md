@@ -18,5 +18,5 @@ This API takes in the url of a webpage and css selector id of the content to be 
 * In order to scrap the following table from [Football Reference's page](https://fbref.com/en/comps/22/Major-League-Soccer-Stats), first we get the css selector id for the table. 
 * You can refer to  [my previous article on web scraping](https://npranav10.github.io/blog/scraping_fbref_data.html) on using SelectorGadget to identify the css selector id for an html element.
 
-# <img src="https://raw.githubusercontent.com/npranav10/npranav10.github.io/master/blog/scraping-fbref-data/selectorgadget.png" align="center" width="1200" />
+# <img src="https://raw.githubusercontent.com/npranav10/npranav10.github.io/master/blog/scraping-fbref-data/selectorgadget.png" align="center" width="1000" />
 
