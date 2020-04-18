@@ -24,3 +24,4 @@ This API takes in the url of a webpage and css selector id of the content to be 
 `http://acciotables.herokuapp.com/?page_url=https://fbref.com/en/comps/22/Major-League-Soccer-Stats&content_selector_id=%23stats_keeper_squads`.
  Note that **#** is replaced with its ASCII value **%23** as URL's don't accept some symbols. Remember to swap # with %23 or refer to this [page](https://krypted.com/utilities/html-encoding-reference/) for more details for encoding other symbols.
 
+# <img src="https://raw.githubusercontent.com/npranav10/acciotables/accio.png" align="center" width="600" />
